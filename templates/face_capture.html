@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{{ 'Face Verification' if verify else 'Face Registration' }}</h2>
+<video id="video" width="320" height="240" autoplay></video>
+<canvas id="canvas" width="320" height="240" style="display:none;"></canvas>
+<button id="capture_btn">Capture</button>
+<div id="status"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.4/socket.io.js"></script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+<script>
+var verify = {{ 'true' if verify else 'false' }};
+initFaceCapture(verify);
+</script>
+{% endblock %}

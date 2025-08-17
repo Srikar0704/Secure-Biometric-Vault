@@ -1,0 +1,7 @@
+Flask
+Flask-SocketIO
+face-recognition
+Werkzeug
+cryptography
+opencv-python
+eventlet
